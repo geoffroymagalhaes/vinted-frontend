@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+/* ---header---- */
+.firstHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.firstHead input {
+  border: none;
+  height: 35px;
+  background-color: #f5f6f7;
+  width: 600px;
+  border-radius: 5px;
+}
+.firstHead button {
+  height: 30px;
+  border: solid 1px #2cb1ba;
+  border-radius: 5px;
+}
+.firstHead > button {
+  background-color: #2cb1ba;
+  color: white;
+}
+.firstHead > div > button {
+  background-color: white;
+  color: #2cb1ba;
+  padding: 0 20px;
+}
+.firstHead > div {
+  display: flex;
+  gap: 20px;
+}
+/* ---main--- */
+.hero {
+  background-image: url(./assets/img/vinted-home.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+}
+.heroSign {
+  padding: 50px 20px;
+  font-size: 34px;
+  width: 400px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 15vh;
+}
+.heroSign button {
+  margin-top: 30px;
+  height: 45px;
+  font-size: 16px;
+  border-radius: 5px;
+  color: white;
+  border: solid 1px #2cb1ba;
+  background-color: #2cb1ba;
+}
+/* ---articleMain--- */
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.imgUser {
+  width: 30px;
+  border-radius: 50%;
+}
+.imgArticle {
+  height: 350px;
+  width: 100%;
+}
+.articleContainer {
+  padding: 10px 5px;
+  width: calc(100% / 5);
+  flex-shrink: 0;
+  border: solid 1px;
+}
+/* ------offer------ */
+.imgOffer {
+  width: 450px;
+}
+.flexOffer {
+  display: flex;
+  justify-content: space-between;
+}
+.textOffer {
+  padding: 40px;
+  width: 450px;
+  background-color: white;
+}
+.backcolorOffer {
+  padding: 30px;
+  height: 100vh;
+  background-color: #ebedee;
+}
+.flexDetails {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  background-color: lightcoral;
+}
+/* .detailFromMap {
+  background-color: aquamarine;
+
+  display: flex;
+  flex-direction: column;
+} */
+.textOffer > p {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.textOffer h2 {
+  border-top: 1px solid #e7e7e7;
+  padding-top: 60px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.textOffer h3 {
+  padding: 20px 0;
+  font-size: 16px;
+  color: #666666;
+}
+.offerUserInfo {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+.offerUserInfo img {
+  border-radius: 50%;
+  width: 60px;
+}
+.buyButton {
+  font-size: 16px;
+  color: white;
+  border: solid 1px #2cb1ba;
+  background-color: #2cb1ba;
+  padding: 10px 0;
+  width: 100%;
+}
