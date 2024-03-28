@@ -10,7 +10,7 @@ const Home = () => {
     const response = await axios.get(
       "https://lereacteur-vinted-api.herokuapp.com/offers"
     );
-    console.log(response.data);
+    // console.log(response.data);
     setData(response.data);
     setIsLoading(false);
   };
@@ -36,11 +36,11 @@ const Home = () => {
             <section className="articleContainer" key={article._id}>
               <Link to={`/offer/${article._id}`}>
                 <div className="userInfo">
-                  <img
+                  {/* <img
                     className="imgUser"
                     src={article.owner.account.avatar.url}
                     alt=""
-                  />
+                  /> */}
                   <h2>{article.owner.account.username}</h2>
                 </div>
                 <img

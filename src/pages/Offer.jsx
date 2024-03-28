@@ -43,6 +43,7 @@ const Offer = () => {
                   <p>{details.ÉTAT}</p>
                   <p>{details.COULEUR}</p>
                   <p>{details.EMPLACEMENT}</p>
+                  <p>{details["MODES DE PAIEMENT"]}</p>
                 </div>
               </section>
             );
