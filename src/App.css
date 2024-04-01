@@ -9,6 +9,13 @@ a {
   text-decoration: none;
   color: black;
 }
+button:hover {
+  cursor: pointer;
+}
+.backColor {
+  background-color: #ebedee;
+  height: 100vh;
+}
 /* ---header---- */
 .firstHead {
   display: flex;
@@ -16,12 +23,24 @@ a {
   align-items: center;
   padding: 10px 0;
 }
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+}
+.searchBar img {
+  height: 15px;
+  margin-right: -10px;
+  padding-left: 5px;
+}
 .firstHead input {
   border: none;
   height: 35px;
   background-color: #f5f6f7;
-  width: 600px;
   border-radius: 5px;
+
+  width: 500px;
 }
 .firstHead button {
   height: 30px;
@@ -32,10 +51,15 @@ a {
   background-color: #2cb1ba;
   color: white;
 }
-.firstHead > div > button {
+.signupLoginButton {
   background-color: white;
   color: #2cb1ba;
   padding: 0 20px;
+}
+.firstHead .logoutButton {
+  color: white;
+  background-color: #c2175b;
+  border: #c2175b;
 }
 .firstHead > div {
   display: flex;
@@ -49,6 +73,7 @@ a {
   background-position: center;
   height: 450px;
 }
+
 .heroSign {
   padding: 50px 20px;
   font-size: 34px;
@@ -67,7 +92,17 @@ a {
   border: solid 1px #2cb1ba;
   background-color: #2cb1ba;
 }
-/* ---articleMain--- */
+.tear {
+  /* border: red solid 1px; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 450px;
+}
+.tearImg {
+  width: 75%;
+}
+/* ---home-page--- */
 main {
   padding-top: 20px;
   display: flex;
@@ -78,6 +113,8 @@ main {
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
+  font-size: 14px;
+  color: #666666;
 }
 .imgUser {
   width: 30px;
@@ -88,23 +125,31 @@ main {
   height: 350px;
   width: 100%;
 }
+
 .articleContainer {
   padding: 10px 5px;
   width: calc(100% / 5);
   flex-shrink: 0;
-  border: solid 1px;
+  /* border: solid 1px; */
+}
+.productDescription {
+  font-size: 13px;
+  color: #666666;
+  line-height: 14px;
+  margin-top: 2px;
 }
 /* ------offer------ */
 .imgOffer {
-  width: 450px;
+  height: 600px;
 }
 .flexOffer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .textOffer {
   padding: 40px;
-  width: 450px;
+  width: 400px;
+  height: 600px;
   background-color: white;
 }
 .backcolorOffer {
@@ -117,8 +162,16 @@ main {
   justify-content: space-between;
   margin-bottom: 10px;
 
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
 }
+.detailsKey {
+  font-size: 14px;
+  color: #adadad;
+}
+.detailValue {
+  color: #7c7c7c;
+}
+
 /* .detailFromMap {
   background-color: aquamarine;
 
@@ -130,6 +183,7 @@ main {
   font-size: 24px;
 }
 .textOffer h2 {
+  margin-top: 50px;
   border-top: 1px solid #e7e7e7;
   padding-top: 60px;
   font-size: 16px;
@@ -168,18 +222,112 @@ main {
   align-items: center;
   margin-top: 60px;
 }
+.formSignup h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 .formSignup input {
-  width: 280px;
+  width: 300px;
 }
-.formLogin {
-  display: flex;
-  flex-direction: column;
-  width: 280px;
-}
+
 .inBorderR {
   font-size: 16px;
   margin: 10px 0;
   height: 40px;
   border: none;
+  color: #000000;
   border-bottom: 1px solid #fcced3;
+}
+.checkbox {
+  display: flex;
+
+  margin: 30px 0 10px 0;
+}
+.checkbox h2 {
+  font-size: 20px;
+  color: #4a4848;
+}
+.checkbox input {
+  width: 20%;
+}
+.formSignup p {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 40px;
+}
+.signupSubmit {
+  font-size: 16px;
+  color: white;
+  border: solid 1px #2cb1ba;
+  background-color: #2cb1ba;
+  padding: 15px 0;
+  border-radius: 5px;
+}
+.signupSubmit:hover {
+  cursor: pointer;
+}
+form .errorMessage {
+  text-align: center;
+  color: red;
+  font-size: 14px;
+  padding: 10px 0;
+}
+.linkLogin > p {
+  color: #2cb1ba;
+  padding: 20px 0;
+}
+/* ---login---- */
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  margin-top: 60px;
+}
+.formLogin input {
+  width: 280px;
+}
+.formLogin h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.linkSignin > p {
+  color: #2cb1ba;
+  padding: 20px 0;
+  font-size: 14px;
+}
+.loginSubmit {
+  margin-top: 30px;
+  font-size: 16px;
+  color: white;
+  border: solid 1px #2cb1ba;
+  background-color: #2cb1ba;
+  padding: 15px 0;
+  border-radius: 5px;
+}
+.loginSubmit:hover {
+  cursor: pointer;
+}
+/* --------Publish-------- */
+
+.formPubishContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 20px 0;
+}
+.articlePublish {
+  padding: 20px;
+  display: flex;
+  border-bottom: solid 1px lightgray;
+}
+.articlePublish h2 {
+  width: 50%;
+  font-size: 18px;
+}
+.articlePublish input {
+  width: 50%;
+  height: 30px;
+  font-size: 16px;
+  border: none;
 }

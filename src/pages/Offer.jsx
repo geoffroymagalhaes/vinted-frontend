@@ -10,7 +10,8 @@ const Offer = () => {
 
   const fetchData = async () => {
     const response = await axios.get(
-      `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
+      // `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`,
+      `https://site--backend-vinted--tvp4vjmpy6zn.code.run/offers/${id}`
     );
     console.log(response.data);
     setData(response.data);
@@ -35,15 +36,15 @@ const Offer = () => {
             return (
               <section className="flexDetails">
                 <div>
-                  <p>{Object.keys(details)}</p>
+                  <p className="detailsKey">{Object.keys(details)}</p>
                 </div>
-                <div className="detailFromMap">
+                <div className="detailValue">
                   <p>{details.MARQUE}</p>
                   <p>{details.TAILLE}</p>
                   <p>{details.ÉTAT}</p>
                   <p>{details.COULEUR}</p>
                   <p>{details.EMPLACEMENT}</p>
-                  <p>{details["MODES DE PAIEMENT"]}</p>
+                  <p className="marginOffer">{details["MODES DE PAIEMENT"]}</p>
                 </div>
               </section>
             );
