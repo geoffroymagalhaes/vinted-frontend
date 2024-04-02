@@ -16,10 +16,10 @@ const Signup = ({ setToken }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    setErrorMessage("");
     try {
-      setErrorMessage("");
       const { data } = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        `https://site--backend-vinted--tvp4vjmpy6zn.code.run/user/signup`,
         {
           email,
           username: name,
@@ -32,11 +32,12 @@ const Signup = ({ setToken }) => {
       navigate("/");
       console.log(response.data);
     } catch (error) {
-      if (error.response.data === 409) {
-        console.log(error.response.data);
-        setErrorMessage("this email already has an account");
-      } else if (error.response.data.message === "Missing parameters")
-        setErrorMessage("Please fill in all the fields");
+      console.log(error.response);
+      // if (error.response.data === 409) {
+      //   console.log(error.response.data);
+      //   setErrorMessage("this email already has an account");
+      // } else if (error.response.data.message === "Missing parameters")
+      //   setErrorMessage("Please fill in all the fields");
     }
   };
 

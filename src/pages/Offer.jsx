@@ -9,13 +9,18 @@ const Offer = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
-    const response = await axios.get(
-      // `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`,
-      `https://site--backend-vinted--tvp4vjmpy6zn.code.run/offer/${id}`
-    );
-    console.log(response.data);
-    setData(response.data);
-    setIsLoading(false);
+    try {
+      const response = await axios.get(
+        // `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`,
+        `https://site--backend-vinted--tvp4vjmpy6zn.code.run/offer/${id}`
+        // `http://localhost:3000/offer/${id}`
+      );
+      console.log(response.data);
+      setData(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error.response.data);
+    }
   };
   useEffect(() => {
     fetchData();
@@ -31,7 +36,6 @@ const Offer = () => {
         </div>
         <div className="textOffer">
           <p>{data.product_price} €</p>
-
           {data.product_details.map((details) => {
             return (
               <section className="flexDetails">
@@ -49,14 +53,22 @@ const Offer = () => {
               </section>
             );
           })}
-
           <h2>{data.product_name}</h2>
           <h3>{data.product_description}</h3>
           <div className="offerUserInfo">
-            <img src={data.owner.account.avatar.url} alt="" />
+            {data.owner.account.avatar && (
+              <img src={data.owner.account.avatar.url} alt="" />
+            )}
+
             <h4>{data.owner.account.username}</h4>
           </div>
-          <button className="buyButton">Acheter</button>
+
+          <Link
+            to="/payment"
+            state={{ title: data.product_name, price: data.product_price }}
+          >
+            <button className="buyButton">Acheter</button>
+          </Link>
         </div>
       </section>
     </section>

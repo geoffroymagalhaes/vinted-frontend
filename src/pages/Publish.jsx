@@ -1,9 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const [picture, setPicture] = useState("");
-  const [title, setTitle] = useState("");
+  const [marque, setMarque] = useState("");
   const [description, setDescription] = useState("");
   const [brand, setBrand] = useState("");
   const [size, setSize] = useState("");
@@ -19,7 +20,7 @@ const Publish = ({ token }) => {
     try {
       const formData = new FormData();
       formData.append("picture", picture);
-      formData.append("title", title);
+      formData.append("marque", marque);
       formData.append("description", description);
       formData.append("brand", brand);
       formData.append("size", size);
@@ -47,12 +48,12 @@ const Publish = ({ token }) => {
     }
   };
 
-  return (
+  return token ? (
     <section className=" backColor ">
       <div className="container">
-        <h1>Vends ton article</h1>
+        <h1 className="titlePubish">Vends ton article</h1>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="importPublish">
             <input
               type="file"
               onChange={(event) => {
@@ -65,17 +66,19 @@ const Publish = ({ token }) => {
               <h2>Titre</h2>
               <input
                 type="text"
-                value={title}
+                value={marque}
                 name="title"
                 placeholder="ex: Chemise Sézane verte"
                 onChange={(event) => {
-                  setTitle(event.target.value);
+                  setMarque(event.target.value);
                 }}
               />
             </article>
             <article className="articlePublish">
               <h2>Décris ton article</h2>
-              <input
+              <textarea
+                rows={6}
+                cols={60}
                 type="text"
                 value={description}
                 name="description"
@@ -161,20 +164,27 @@ const Publish = ({ token }) => {
                 }}
               />
             </article>
-            <input
-              type="checkbox"
-              value={exchange}
-              name="exchange"
-              onChange={(event) => {
-                SetExchange(event.target.value);
-              }}
-            />
-            <p>Je suis intéressé(e) par les échanges</p>
+            <article className="checkoxPublish">
+              <h2></h2>
+              <input
+                type="checkbox"
+                value={exchange}
+                name="exchange"
+                onChange={(event) => {
+                  SetExchange(event.target.value);
+                }}
+              />
+              <p>Je suis intéressé(e) par les échanges</p>
+            </article>
           </div>
-          <input type="submit" value="Ajouter" />
+          <article className="submitFlex">
+            <input className="submitPublish" type="submit" value="Ajouter" />
+          </article>
         </form>
       </div>
     </section>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 export default Publish;

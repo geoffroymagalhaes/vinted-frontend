@@ -11,14 +11,16 @@ import Offer from "./pages/Offer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Publish from "./pages/Publish";
+import Payment from "./pages/Payment";
 
 // Import components
 import Header from "./components/Header";
 
 function App() {
-  const [token, setToken] = useState(Cookies.get("token") || null);
+  const [token, setToken] = useState(Cookies.get("Vtoken") || null);
   console.log(token);
   const [search, setSearch] = useState("");
+  const [values, setValues] = useState([20, 200]);
 
   // const checkToken = (token) => {
   //   if (token) {
@@ -34,15 +36,21 @@ function App() {
       <Header
         token={token}
         seach={search}
+        values={values}
         setSearch={setSearch}
         setToken={setToken}
+        setValues={setValues}
       />
       <Routes>
-        <Route path="/" element={<Home search={search} />} />
+        <Route
+          path="/"
+          element={<Home search={search} token={token} values={values} />}
+        />
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup setToken={setToken} />} />
         <Route path="/login" element={<Login setToken={setToken} />} />
         <Route path="/publish" element={<Publish token={token} />} />
+        <Route path="/payment" element={<Payment token={token} />} />
       </Routes>
     </Router>
   );

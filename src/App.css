@@ -14,7 +14,7 @@ button:hover {
 }
 .backColor {
   background-color: #ebedee;
-  height: 100vh;
+  height: calc(100vh - 95px);
 }
 /* ---header---- */
 .firstHead {
@@ -47,7 +47,7 @@ button:hover {
   border: solid 1px #2cb1ba;
   border-radius: 5px;
 }
-.firstHead > button {
+.sale {
   background-color: #2cb1ba;
   color: white;
 }
@@ -115,15 +115,17 @@ main {
   margin-bottom: 10px;
   font-size: 14px;
   color: #666666;
+  height: 30px;
 }
 .imgUser {
-  width: 30px;
+  height: 30px;
   border-radius: 50%;
   margin-left: 10px;
 }
 .imgArticle {
   height: 350px;
   width: 100%;
+  object-fit: contain;
 }
 
 .articleContainer {
@@ -141,13 +143,15 @@ main {
 /* ------offer------ */
 .imgOffer {
   height: 600px;
+  width: 400px;
+  object-fit: contain;
 }
 .flexOffer {
   display: flex;
   justify-content: space-around;
 }
 .textOffer {
-  padding: 40px;
+  padding: 30px;
   width: 400px;
   height: 600px;
   background-color: white;
@@ -183,9 +187,9 @@ main {
   font-size: 24px;
 }
 .textOffer h2 {
-  margin-top: 50px;
+  margin-top: 30px;
   border-top: 1px solid #e7e7e7;
-  padding-top: 60px;
+  padding-top: 50px;
   font-size: 16px;
   font-weight: bold;
 }
@@ -199,7 +203,7 @@ main {
   gap: 10px;
   font-size: 16px;
   align-items: center;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 .offerUserInfo img {
   border-radius: 50%;
@@ -210,6 +214,7 @@ main {
   color: white;
   border: solid 1px #2cb1ba;
   background-color: #2cb1ba;
+  border-radius: 5px;
   padding: 10px 0;
   width: 100%;
 }
@@ -330,4 +335,85 @@ form .errorMessage {
   height: 30px;
   font-size: 16px;
   border: none;
+}
+.titlePubish {
+  padding: 30px 0 20px 0;
+  font-size: 30px;
+}
+.importPublish {
+  height: 250px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkoxPublish > h2 {
+  width: 49%;
+}
+.checkoxPublish {
+  padding: 20px 0;
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
+.submitPublish {
+  margin: 40px 0 30px;
+  font-size: 16px;
+  color: white;
+  border: solid 1px #2cb1ba;
+  background-color: #2cb1ba;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+.submitFlex {
+  display: flex;
+  justify-content: flex-end;
+}
+/* ---paiment--- */
+
+.paimentContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.paimentContainer h3 {
+  color: #706f6f;
+  margin-bottom: 30px;
+}
+.paimentSubtotal {
+  color: #464545;
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+}
+.paiementTotal {
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 40px 0;
+  border-top: 1px solid #a0a0a0;
+  margin-top: 40px;
+}
+h4 span {
+  font-weight: bold;
+}
+.paimentContainer h4 {
+  font-size: 16px;
+  border-bottom: 1px solid #a0a0a0;
+  padding-bottom: 20px;
+}
+
+.bottomborderPayment {
+  padding-bottom: 20px;
+  border-bottom: #666666;
+}
+.stripe {
+  margin-top: 50px;
+}
+.payButton {
+  margin: 20px 0;
+  padding: 10px 0;
+  width: 100%;
 }

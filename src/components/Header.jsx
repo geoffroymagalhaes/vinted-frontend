@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-
 // Import img
 import Logo from "../assets/img/vinted-logo.png";
 import Icon from "../assets/img/glass-icon.png";
 
-const Header = ({ token, search, setSearch, setToken }) => {
+import Slide from "./Slide";
+
+const Header = ({ token, search, values, setSearch, setToken, setValues }) => {
   return (
     <header>
       <div className="firstHead container">
@@ -49,9 +50,13 @@ const Header = ({ token, search, setSearch, setToken }) => {
           </Link>
         ) : (
           <Link to="/login">
-            <button>Vends tes articles</button>
+            <button className="sale">Vends tes articles</button>
           </Link>
         )}
+      </div>
+
+      <div className="container">
+        <Slide values={values} setValues={setValues} />
       </div>
     </header>
   );

@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 // --import img--
 import Tear from "../assets/img/tear.svg";
 
-const Home = ({ search }) => {
+const Home = ({ search, token, values }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
     const response = await axios.get(
-      // `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}`,
-      `https://site--backend-vinted--tvp4vjmpy6zn.code.run/offers?title=${search}`
+      // `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&priceMin=${values[0]}&priceMax=${values[1]}`
+      `https://site--backend-vinted--tvp4vjmpy6zn.code.run/offers?title=${search}&priceMin=${values[0]}&priceMax=${values[1]}`
     );
     // console.log(response.data);
     setData(response.data);
@@ -20,7 +20,7 @@ const Home = ({ search }) => {
   };
   useEffect(() => {
     fetchData();
-  }, [search]);
+  }, [search, values]);
 
   return isLoading ? (
     <p>Loading ...</p>
@@ -30,7 +30,15 @@ const Home = ({ search }) => {
         <div className="container ">
           <div className=" heroSign">
             <h1>Prêts à faire du tri dans vos placards ?</h1>
-            <button>Commencer à vendre</button>
+            {token ? (
+              <Link to="/publish">
+                <button>Commencer à vendre</button>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <button>Commencer à vendre</button>
+              </Link>
+            )}
           </div>
         </div>
         <div className="tear">
